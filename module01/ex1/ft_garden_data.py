@@ -4,7 +4,7 @@ class Plant:
     age: int
 
     def __init__(self, name: str, height: float, age: int):
-        self.name = name
+        self.name = name.capitalize()
         self.height = height
         self.age = age
 

@@ -4,9 +4,12 @@ class Plant:
     _age: int
 
     def __init__(self, name: str, height: float, age: int) -> None:
-        self._name = name
-        self._height = height
-        self._age = age
+        self._name = name.capitalize()
+        self._height = 0.0
+        self._age = 0
+
+        self.set_height(height)
+        self.set_age(age)
 
     def show(self) -> str:
         return f"{self._name}: {self._height:.1f}cm, {self._age} days old"

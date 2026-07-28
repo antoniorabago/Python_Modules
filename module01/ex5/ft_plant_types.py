@@ -7,9 +7,12 @@ class Plant:
     def __init__(self, name: str, height: float,
                  age: int, grow_rate: float) -> None:
         self._name = name.capitalize()
-        self._height = height
-        self._age = age
+        self._height = 0.0
+        self._age = 0
         self._grow_rate = grow_rate
+
+        self.set_height(height)
+        self.set_age(age)
 
     def show(self) -> str:
         return f"{self._name}: {self._height:.1f}cm, {self._age} days old"
@@ -48,7 +51,7 @@ class Flower(Plant):
     def __init__(self, name: str, height: float, age: int,
                  grow_rate: float, color: str) -> None:
         super().__init__(name, height, age, grow_rate)
-        self.color = color
+        self._color = color
         self._bloom = False
 
     def bloom(self) -> None:
@@ -61,7 +64,7 @@ class Flower(Plant):
             return " Rose has not bloomed yet"
 
     def show(self) -> str:
-        return f"{super().show()} \n Color: {self.color}"
+        return f"{super().show()} \n Color: {self._color}"
 
 
 class Tree(Plant):
@@ -94,7 +97,7 @@ class Vegetable(Plant):
         self._harvest_season = harvest_season.capitalize()
         self._nutritional_value = 0
 
-    def grow(self):
+    def grow(self) -> None:
         super().increment_age()
         super().grow()
         self._nutritional_value += 1
