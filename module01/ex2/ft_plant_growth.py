@@ -19,15 +19,15 @@ class Plant:
 
 
 def main() -> None:
-    total_growth = 0.0
     rose = Plant("Rose", 25.0, 30)
+    initial_height: float = rose.height
     print("=== Garden Plant Growth ===")
     for day in range(1, 8):
         print(f"=== Day {day} ===")
         rose.increment_age()
         rose.grow()
         print(rose.show())
-    total_growth = rose.height - 25.0
+    total_growth = rose.height - initial_height
     print(f"Growth this week: {total_growth:.1f}cm")
 
 
