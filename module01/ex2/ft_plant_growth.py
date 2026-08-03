@@ -24,6 +24,7 @@ def main() -> None:
     rose = Plant("Rose", 25.0, 30)
     initial_height: float = rose.height
     print("=== Garden Plant Growth ===")
+    print(rose.show())
     for day in range(1, 8):
         print(f"=== Day {day} ===")
         rose.increment_age()
