@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def main() -> None:
     name: str = "Rose"
     height: int = 25
