@@ -27,7 +27,8 @@ def get_max(inventory: dict[str, int]) -> tuple[str, int]:
 
 def main() -> None:
     print("=== Inventory System Analysis ===")
-    inventory = {}
+    inventory: dict[str, int] = {}
+
     for arg in sys.argv[1:]:
         if ":" not in arg:
             print(f"Error - invalid parameter '{arg}'")
@@ -45,18 +46,24 @@ def main() -> None:
     print(f"Item list: {list(inventory.keys())}")
 
     total_quantity = sum(inventory.values())
-    print(f"Total quantity of the {len(inventory)} items: {total_quantity}")
+    print(f"Total quantity of the {len(inventory)} "
+          f"items: {total_quantity}")
 
-    for key in inventory.keys():
-        key_value = inventory[key]
-        print(f"Item {key} represents {(key_value/total_quantity) * 100:.1f}%")
+    if inventory:
+        for key in inventory.keys():
+            key_value = inventory[key]
+            print(f"Item {key} represents "
+                  f"{(key_value/total_quantity) * 100:.1f}%")
 
-    max_key, max_value = get_max(inventory)
-    print(f"Item most abundant: {max_key} "
-          f"with quantity {max_value}")
-    min_key, min_value = get_min(inventory)
-    print(f"Item least abundant: {min_key} "
-          f"with quantity {min_value}")
+        max_key, max_value = get_max(inventory)
+        print(f"Item most abundant: {max_key} "
+              f"with quantity {max_value}")
+        min_key, min_value = get_min(inventory)
+        print(f"Item least abundant: {min_key} "
+              f"with quantity {min_value}")
+
+    inventory.update({"magic_item": 1})
+    print(f"Updated inventory: {inventory}")
 
 
 if __name__ == "__main__":
