@@ -31,8 +31,8 @@ def main() -> None:
             print("---")
             new_name = input("Enter new file name (or empty):")
             if new_name:
-                file = open(new_name, "w")
                 print(f"Saving data to '{new_name}'")
+                file = open(new_name, "w")
                 file.write(new_content)
                 print(f"Data saved in file '{new_name}'")
                 file.close()
