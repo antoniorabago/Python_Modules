@@ -7,25 +7,25 @@ from typing import Any
 class DataProcessor(ABC):
     def __init__(self) -> None:
         self._data: list[Any] = []
-        self._index = 0
+        self._output_count = 0
 
     @abstractmethod
     def validate(self, data: Any) -> bool:
-        pass
+        ...
 
     @abstractmethod
     def ingest(self, data: Any) -> None:
-        pass
+        ...
 
     def output(self) -> tuple[int, str]:
         value: str = ""
-        index: int = 0
+        count: int = 0
         if self._data:
-            index = self._index
+            count = self._output_count
             value = self._data[0]
-            self._index += 1
+            self._output_count += 1
             self._data.pop(0)
-        return index, value
+        return count, value
 
 
 class NumericProcessor(DataProcessor):
