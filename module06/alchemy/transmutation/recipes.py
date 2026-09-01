@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from elements import create_fire
+from ...elements import create_fire
 import alchemy
 
 
