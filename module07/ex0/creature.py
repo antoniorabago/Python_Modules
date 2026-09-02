@@ -7,8 +7,12 @@ class Creature(ABC):
     _name: str = ""
     _type: str = ""
 
+    def __init__(self, name: str, type: str) -> None:
+        self._name = name
+        self._type = type
+
     @abstractmethod
-    def attack() -> None:
+    def attack(self) -> str:
         ...
 
     def describe(self) -> str:
