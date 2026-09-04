@@ -17,7 +17,7 @@ def main() -> None:
     print(evolved_healing.attack())
     print(evolved_healing.heal())
 
-    print("Testing Creature with transform capability")
+    print("\nTesting Creature with transform capability")
     print(" base:")
     transform_creature = TransformCreatureFactory()
     base_transform = transform_creature.create_base()
