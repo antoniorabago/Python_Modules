@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 
-from ex0 import FlameFactory, AquaFactory
-from ex0.factory import CreatureFactory
+from ex0 import CreatureFactory, FlameFactory, AquaFactory
 from ex1 import HealingCreatureFactory, TransformCreatureFactory
-from ex2 import BattleStrategy, AggressiveStrategy, DefensiveStrategy, \
-                NormalStrategy, InvalidStrategyError
+from ex2 import (
+    BattleStrategy,
+    AggressiveStrategy,
+    DefensiveStrategy,
+    NormalStrategy,
+    InvalidStrategyError
+    )
 
 
 def battle(oponents: list[tuple[CreatureFactory, BattleStrategy]]) -> None:
