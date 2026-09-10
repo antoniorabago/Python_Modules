@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from .elements import create_earth, create_air
-from elements import create_fire, create_water  # type: ignore
+from elements import create_fire, create_water
 
 
 def strength_potion() -> str:

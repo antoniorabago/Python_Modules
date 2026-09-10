@@ -10,7 +10,7 @@ def main() -> None:
     print("Now show that not all functions can be reached")
     print("This will raise an exception!")
     print("Testing the hidden create_earth: ", end="")
-    print(alchemy.create_earth())  # type: ignore
+    print(alchemy.create_earth())
 
 
 if __name__ == "__main__":

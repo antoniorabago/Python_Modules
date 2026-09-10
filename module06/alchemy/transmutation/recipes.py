@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from elements import create_fire    # type: ignore
+from elements import create_fire
 from ..elements import create_air
 from ..potions import strength_potion
 
