@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import alchemy
 
 
@@ -10,11 +9,8 @@ def main() -> None:
     print(f"Testing create_air: {alchemy.create_air()}")
     print("Now show that not all functions can be reached")
     print("This will raise an exception!")
-    try:
-        print(f"Testing the hidden create_earth: "
-              f"{alchemy.create_earth()}")
-    except AttributeError as e:
-        print(f"AttributeError: {e}. Did you mean: 'create_air'?")
+    print("Testing the hidden create_earth: ", end="")
+    print(alchemy.create_earth())  # type: ignore
 
 
 if __name__ == "__main__":
