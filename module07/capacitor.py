@@ -3,36 +3,43 @@
 from ex1 import HealingCreatureFactory, TransformCreatureFactory
 
 
+def test_healing_creature(factory: HealingCreatureFactory) -> None:
+    print(" base:")
+    base = factory.create_base()
+    print(base.describe())
+    print(base.attack())
+    print(base.heal())
+
+    print(" evolved:")
+    evolved = factory.create_evolved()
+    print(evolved.describe())
+    print(evolved.attack())
+    print(evolved.heal())
+
+
+def test_transform_creature(factory: TransformCreatureFactory) -> None:
+    print(" base:")
+    base = factory.create_base()
+    print(base.describe())
+    print(base.attack())
+    print(base.transform())
+    print(base.attack())
+    print(base.revert())
+    print(" evolved:")
+    evolved = factory.create_evolved()
+    print(evolved.describe())
+    print(evolved.attack())
+    print(evolved.transform())
+    print(evolved.attack())
+    print(evolved.revert())
+
+
 def main() -> None:
     print("Testing Creature with healing capability")
-    print(" base:")
-    healing_creature = HealingCreatureFactory()
-    base_healing = healing_creature.create_base()
-    print(base_healing.describe())
-    print(base_healing.attack())
-    print(base_healing.heal())
-    print(" evolved:")
-    evolved_healing = healing_creature.create_evolved()
-    print(evolved_healing.describe())
-    print(evolved_healing.attack())
-    print(evolved_healing.heal())
+    test_healing_creature(HealingCreatureFactory())
 
     print("\nTesting Creature with transform capability")
-    print(" base:")
-    transform_creature = TransformCreatureFactory()
-    base_transform = transform_creature.create_base()
-    print(base_transform.describe())
-    print(base_transform.attack())
-    print(base_transform.transform())
-    print(base_transform.attack())
-    print(base_transform.revert())
-    print(" evolved:")
-    evolved_transform = transform_creature.create_evolved()
-    print(evolved_transform.describe())
-    print(evolved_transform.attack())
-    print(evolved_transform.transform())
-    print(evolved_transform.attack())
-    print(evolved_transform.revert())
+    test_transform_creature(TransformCreatureFactory())
 
 
 if __name__ == "__main__":

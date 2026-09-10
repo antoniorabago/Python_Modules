@@ -73,19 +73,15 @@ class Morphagon(Creature, TransformCapability):
 
 class HealingCreatureFactory(CreatureFactory):
     def create_base(self) -> Sproutling:
-        base = Sproutling("Sproutling", "Grass")
-        return base
+        return Sproutling("Sproutling", "Grass")
 
     def create_evolved(self) -> Bloomelle:
-        evolved = Bloomelle("Bloomelle", "Grass/Fairy")
-        return evolved
+        return Bloomelle("Bloomelle", "Grass/Fairy")
 
 
 class TransformCreatureFactory(CreatureFactory):
     def create_base(self) -> Shiftling:
-        base = Shiftling("Shiftling", "Normal")
-        return base
+        return Shiftling("Shiftling", "Normal")
 
     def create_evolved(self) -> Morphagon:
-        evolved = Morphagon("Morphagon", "Normal/Dragon")
-        return evolved
+        return Morphagon("Morphagon", "Normal/Dragon")
