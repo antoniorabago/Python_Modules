@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from abc import ABC, abstractmethod
-from ex0.creature import Creature, Flameling, Pyrodon, Aquabub, Torragon
+from .creature import Creature, Flameling, Pyrodon, Aquabub, Torragon
 
 
 class CreatureFactory(ABC):
@@ -16,19 +16,15 @@ class CreatureFactory(ABC):
 
 class FlameFactory(CreatureFactory):
     def create_base(self) -> Creature:
-        base = Flameling("Flameling", "Fire")
-        return base
+        return Flameling("Flameling", "Fire")
 
     def create_evolved(self) -> Creature:
-        evolved = Pyrodon("Pyrodon", "Fire/Flying")
-        return evolved
+        return Pyrodon("Pyrodon", "Fire/Flying")
 
 
 class AquaFactory(CreatureFactory):
     def create_base(self) -> Creature:
-        base = Aquabub("Aquabub", "Water")
-        return base
+        return Aquabub("Aquabub", "Water")
 
     def create_evolved(self) -> Creature:
-        evolved = Torragon("Torragon", "Water")
-        return evolved
+        return Torragon("Torragon", "Water")

@@ -5,18 +5,18 @@ from abc import ABC, abstractmethod
 
 class Creature(ABC):
     _name: str = ""
-    _type: str = ""
+    _creature_type: str = ""
 
-    def __init__(self, name: str, type: str) -> None:
+    def __init__(self, name: str, creature_type: str) -> None:
         self._name = name
-        self._type = type
+        self._creature_type = creature_type
 
     @abstractmethod
     def attack(self) -> str:
         ...
 
     def describe(self) -> str:
-        return f"{self._name} is a {self._type} type Creature"
+        return f"{self._name} is a {self._creature_type} type Creature"
 
 
 class Flameling(Creature):

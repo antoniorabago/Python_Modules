@@ -1,35 +1,33 @@
 #!/usr/bin/env python3
 
-from ex0 import FlameFactory, AquaFactory
+from ex0 import CreatureFactory, FlameFactory, AquaFactory
 
 
-def fight(flame: FlameFactory, aqua: AquaFactory) -> str:
-    flame_base = flame.create_base()
-    aqua_base = aqua.create_base()
+def test_factory(factory: CreatureFactory) -> None:
+    print("Testing factory")
+    base = factory.create_base()
+    print(base.describe())
+    print(base.attack())
+    evolved = factory.create_evolved()
+    print(evolved.describe())
+    print(evolved.attack())
+
+
+def fight(factory1: CreatureFactory, factory2: CreatureFactory) -> str:
+    base1 = factory1.create_base()
+    base2 = factory2.create_base()
     return (
-            f"{flame_base.describe()} \n vs. \n{aqua_base.describe()} \n"
-            f" fight!\n{flame_base.attack()}\n{aqua_base.attack()} "
+            f"{base1.describe()} \n vs. \n{base2.describe()} \n"
+            f" fight!\n{base1.attack()}\n{base2.attack()} "
     )
 
 
 def main() -> None:
-    print("Testing factory")
     flame_factory = FlameFactory()
-    flame_base = flame_factory.create_base()
-    print(flame_base.describe())
-    print(flame_base.attack())
-    flame_evolved = flame_factory.create_evolved()
-    print(flame_evolved.describe())
-    print(flame_evolved.attack())
-
-    print("\nTesting factory")
+    test_factory(flame_factory)
+    print()
     aqua_factory = AquaFactory()
-    aqua_base = aqua_factory.create_base()
-    print(aqua_base.describe())
-    print(aqua_base.attack())
-    aqua_evolved = aqua_factory.create_evolved()
-    print(aqua_evolved.describe())
-    print(aqua_evolved.attack())
+    test_factory(aqua_factory)
 
     print("\nTesting battle")
     print(fight(flame_factory, aqua_factory))
