@@ -32,7 +32,7 @@ class AggressiveStrategy(BattleStrategy):
                 f"for this aggressive strategy"
             )
         transform_creature = typing.cast(TransformCapability, creature)
-        transform_creature.transform()
+        print(transform_creature.transform())
         print(creature.attack())
         print(transform_creature.revert())
 
