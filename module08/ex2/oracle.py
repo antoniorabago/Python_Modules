@@ -8,7 +8,7 @@ def main() -> None:
     print("ORACLE STATUS: Reading the Matrix...\n")
     env_file = ""
     try:
-        from dotenv import load_dotenv, find_dotenv
+        from dotenv import load_dotenv, find_dotenv  # type: ignore
         env_file = find_dotenv()
         if env_file:
             load_dotenv(env_file)

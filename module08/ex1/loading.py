@@ -33,9 +33,9 @@ def main() -> None:
         print("poetry install")
         sys.exit(1)
 
-    import pandas as pd
+    import pandas as pd  # type: ignore
     import numpy as np
-    import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt  # type: ignore
 
     print("\nAnalyzing Matrix data...")
     data = np.random.normal(0, 1, 1000)
